@@ -13,7 +13,6 @@
     });
     $(`#send`).on('click',async function(){
         let note = $(`.summernote`).summernote('code');
-        let response = await fetch(`https://localhost:7270/WeatherForecast/summerNote?note=${note}`);
-        let data = await response.json();
+        await fetch(`https://localhost:7270/WeatherForecast/summerNote?note=${note}`);
     });
 </script>
