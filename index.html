@@ -13,12 +13,13 @@
     });
     $(`#send`).on('click',async function(){
         let note1 = $(`.summernote`).summernote('code');
-        await fetch(`https://localhost:7270/WeatherForecast/summerNote`,{
+        let re = await fetch(`https://localhost:7270/WeatherForecast/summerNote`,{
             method : "Post",
             headers :new Headers({
                 "Content-Type":"application/json",
             }),
             body : JSON.stringify({Note:note1})
         });
+        re.blob();
     });
 </script>
