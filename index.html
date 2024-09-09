@@ -1,3 +1,5 @@
 <script>
-    alert("xxx");
+    let parames = new URLSearchParams(window.location.search);
+    let id = parames.get("id");
+    alert(`id is ${id}`);
 </script>
