@@ -1,5 +1,8 @@
+<div class="summernote">summernote 1</div>
 <script>
     let parames = new URLSearchParams(window.location.search);
     let id = parames.get("id");
-    alert(`id is ${id}`);
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
 </script>
