@@ -12,10 +12,10 @@
         $('.summernote').summernote();
     });
     $(`#send`).on('click',async function(){
-        let note = $(`.summernote`).summernote('code');
+        let note1 = $(`.summernote`).summernote('code');
         await fetch(`https://localhost:7270/WeatherForecast/summerNote`,{
             method : "Post",
-            body : {note:note}
+            body : {note:note1}
         });
     });
 </script>
