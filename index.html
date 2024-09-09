@@ -4,10 +4,16 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <div class="summernote">summernote 1</div>
+<button type="button" id="send"></button>
 <script>
     let parames = new URLSearchParams(window.location.search);
     let id = parames.get("id");
     $(document).ready(function() {
         $('.summernote').summernote();
+    });
+    $(`#send`).on('click',async function(){
+        let note = $(`.summernote`).summernote('code');
+        let response = await fetch(`https://localhost:7270/WeatherForecast/summerNote?note=${note}`);
+        let data = await response.json();
     });
 </script>
