@@ -15,7 +15,7 @@
         let note = $(`.summernote`).summernote('code');
         await fetch(`https://localhost:7270/WeatherForecast/summerNote`,{
             method : "Post",
-            body : note
+            body : {note:note}
         });
     });
 </script>
